@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentversion": "1.0.0.0",
+    "parameters": {
+        "policyName": {
+            "value": "block-creation-SA-region"
+        },
+        "displaynamepolicydefinition": {
+            "value": "Allow creation of storage account in West Europe only"
+        },
+        "region": {
+            "value": "westeurope"
+        },
+        "descriptionpolicydefinition": {
+            "value": "This policy allows the creation of a storage account only in the West Europe region."
+        },
+        "descriptionpolicyassignment": {
+            "value": "block creation in another region"
+        },
+        "displaynamepolicyassignment": {
+            "value": "block creation in another region"
+        },
+        "policydefinitionID": {
+            "value": "/providers/Microsoft.Management/managementGroups/IBIS-AVD-TEST/providers/Microsoft.Authorization/policyDefinitions/block-creation-SA-region"
+        }
+}
+}
+
+
+
