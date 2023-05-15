@@ -23,12 +23,18 @@ De gekozen infrastructuur oplossing voldoet aan AVG;
 De infrastructuur is aantoonbaar ISO270001 compliant; 
 Performance, availability en diagnostische gegevens worden gelogd 
 De DevOps teams zijn zelf verantwoordelijk voor de applicatie en de data. 
-De applicatie is een web applicatie met een API en gebruikt een database. (kies zelf een database) 
+De applicatie is een web applicatie met een API en gebruikt een database. (kies zelf een database)
+
+
 Technische Requirements: 
 Gebruikers kunnen uit verschillende landen komen. De latency moet overal zo laag mogelijk Zowel de webschermen als de API moeten veilig op het internet worden ontsloten; Uitrollen van infrastructuur gaat via code en pipelines. Niemand heeft schijf rechten op productie Alleen een Service Principal 
+
+
 Opdracht 
 BlijvenLeren heeft jou ingehuurd om de infrastructuur in te richten waarop de DevOps teams zelfstanding veilig hun code kunnen uit rollen. Om de DevOps teams snel op weg te helpen, is het belangrijk dat de keuzes die je maakt goed kunt beargumenteren en dat deze keuzes de DevOps teams enabled. Maak een presentatie of een werkende omgeving (of beide) met de oplossing(en) die je hebt bedacht. Dit kan een architectuur plaat zijn, een verhaal of een werkende omgeving. Dit mag je in maximaal 10 minuten presenteren. Doe dit aan de hand van de deelopdrachten zoals deze zijn beschreven in de paragraaf Deelopdrachten. Kies zelf welke deelopdrachten je doet (of allemaal). Kies de opdrachten die het beste passen bij het profiel waar je op solliciteert en waarbij jij 
 het beste uit de verf komt! 
+
+
 Deelopdrachten 
 Hieronder staan deelopdrachten voor de verschillende expertises van de Cloud Engineer. We begrijpen dat niet iedereen alle deelopdrachten maakt. En dat het ene afhankelijk is van het andere. Kies de meest pragmatische oplossing om jouw expertise te laten zien. 
 Ontwerp een kosten efficiënte infrastructuur waar de applicatie op kan draaien. Dit is een website, een API, een storage account en een database 
@@ -51,6 +57,8 @@ o Tip: Kijk naar Azure Policies
 Om een werkende omgeving te bouwen kun je gebruik maken van tools als Azure DevOps en Azure, maak hiervoor zelf een tijdelijke account aan op Azure en Azure DevOps. Of gebruik je MSDN 
 account. 
 Azure DevOps →→ https://azure.microsoft.com/nl-nl/services/devops/ Azure → https://azure.microsoft.com/nl-nl/free/ 
+
+
 Het gesprek 
 Dit onderdeel van het gesprek zal bestaan uit een tweetal onderdelen 
 1. Een korte presentatie van je gemaakte oplossing. 1 slide met de oplossing die je hebt 
