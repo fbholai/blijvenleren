@@ -7,7 +7,7 @@ param vnetAddressPrefixes array
 @description('The subnet address prefix')
 param subnetAddressPrefix string
 
- 
+
 resource vnet 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   name: vnetName
   location: resourceGroup().location
