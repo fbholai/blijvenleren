@@ -6,8 +6,7 @@ param subnetName string
 param vnetAddressPrefixes array
 @description('The subnet address prefix')
 param subnetAddressPrefix string
-@description('Tags for the resources')
-param tags object
+
  
 resource vnet 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   name: vnetName
@@ -25,7 +24,6 @@ resource vnet 'Microsoft.Network/virtualNetworks@2019-11-01' = {
       }      
     ]
   }
-  tags: tags
 }
  
 output subnetId string = '${vnet.id}/subnets/${subnetName}'

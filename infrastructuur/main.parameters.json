@@ -2,16 +2,16 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
     "contentversion": "1.0.0.0",
     "parameters": {
-        "environmentName": {
+        "vnetName": {
             "value": "test"
         },
-        "vnetAddressPrefixes": {
+        "subnetName": {
             "value": ["10.0.0.0/8"]
         },
-        "subnetNameCluster": {
+        "vnetAddressPrefixes": {
             "value": "cluster"
         },
-        "clusterSubnetPrefix": {
+        "subnetAddressPrefix": {
             "value": "10.20.0.0/16"
         }
 }
