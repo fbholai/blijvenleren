@@ -1,45 +1,31 @@
-param environmentName string
-var vnetName = 'vnet-blijvenleren-${environmentName}'
+@description('The virtual network name')
+param vnetName string
+@description('The name of the subnet')
+param subnetName string
+@description('The virtual network address prefixes')
 param vnetAddressPrefixes array
-param subnetNameCluster string
-param clusterSubnetPrefix string
-param subnetNameGateway string
-param gatewaySubnetPrefix string
-param nsgId string
-param subnetNameVirtualNodes string
-param virtualNodesSubnetPrefix string
-param location string  = resourceGroup().location
-
-
-resource vnet 'Microsoft.Network/virtualNetworks@2022-05-01' = {
+@description('The subnet address prefix')
+param subnetAddressPrefix string
+@description('Tags for the resources')
+param tags object
+ 
+resource vnet 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   name: vnetName
-  location: location
+  location: resourceGroup().location
   properties: {
-    addressSpace:{
-      addressPrefixes: vnetAddressPrefixes 
+    addressSpace: {
+      addressPrefixes: vnetAddressPrefixes
     }
     subnets: [
       {
-        name: subnetNameCluster
-        properties:{
-          addressPrefix:clusterSubnetPrefix
+        name: subnetName
+        properties: {
+          addressPrefix: subnetAddressPrefix
         }
-      }
-      {
-        name: subnetNameGateway
-        properties:{
-          addressPrefix:gatewaySubnetPrefix
-          networkSecurityGroup: {
-            id: nsgId
-          }
-        }
-      }
-      {
-        name:subnetNameVirtualNodes
-        properties:{
-          addressPrefix:virtualNodesSubnetPrefix
-        }
-      }
+      }      
     ]
   }
+  tags: tags
 }
+ 
+output subnetId string = '${vnet.id}/subnets/${subnetName}'
