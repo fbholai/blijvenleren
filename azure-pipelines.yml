@@ -10,6 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'IBIS AVD TEST'
+    scriptType: 'pscore'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'test'
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
