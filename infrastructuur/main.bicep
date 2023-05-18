@@ -8,7 +8,7 @@ param vnetAddressPrefixes array
 param subnetAddressPrefix string
 
 module vnet 'aks-cluster.bicep' = {
-  name: 'vnet deployment'
+  name: 'vnet-deployment'
   params: {
     subnetAddressPrefix: subnetAddressPrefix
     subnetName: subnetName
