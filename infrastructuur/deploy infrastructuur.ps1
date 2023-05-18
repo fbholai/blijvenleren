@@ -1,5 +1,5 @@
 az deployment group create `
-  --name 'vnet deployment' `
+  --name 'vnet' `
   --resource-group 'blijvenleren' `
   --template-file '.\main.bicep' `
   --parameters '.\main.parameters.json'
