@@ -1,19 +1,22 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+#creator Fardeen Bholai
+#pipeline blijvenleren
 
 trigger:
-- none
+- main
 
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+variables:
+ resourcegroupname: 'blijvenleren'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'IBIS AVD TEST'
+    scriptType: 'pscore'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az deployment group create --name $(Build.BuildNumber) --resource-group $(resourcegroupname) --template-file ./infrastructuur/main.bicep --parameters ./infrastructuur/main.parameters.json  
+
+
