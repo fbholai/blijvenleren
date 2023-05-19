@@ -13,6 +13,18 @@
         },
         "subnetAddressPrefix": {
             "value": "192.168.0.0/24"
+        },
+        "clustername": {
+            "value": "aks-blijvenleren"
+        },
+        "osdisksize": {
+            "value": 128
+        },
+        "agentVMSize": {
+            "value": "standard_d2s_v3"
+        },
+        "username": {
+            "value": "azureuser"
         }
 }
 }
