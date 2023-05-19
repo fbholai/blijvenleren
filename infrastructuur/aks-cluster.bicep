@@ -3,11 +3,20 @@ param dnsPrefix string = '${clustername}-dns'
 param osdisksize int
 param agentVMSize string
 param username string
+@secure()
+param adminpassword string
+param vnetsubnetid string
+
+
+resource vnet 'Microsoft.Network/virtualNetworks@2019-11-01' existing = {
+  name: 'vnet-aks-blijvenleren'
+}
+
 resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
   name: clustername
   location: resourceGroup().location
   sku: {
-    name:'Basic'
+    name:'Basic'        
     tier:'Free'
   }
   identity: {
@@ -45,6 +54,7 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
           mode: 'System'
           osType: 'Windows'
         }
+        vnetSubnetID: vnetsubnetid
       }
     ]
     networkProfile:{
@@ -55,6 +65,7 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
     }
     windowsProfile:{
       adminUsername: username
+      adminPassword: adminpassword
     }
     servicePrincipalProfile:{
       clientId: 'msi'

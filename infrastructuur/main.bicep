@@ -16,3 +16,16 @@ module vnet 'vnet.bicep' = {
     vnetName: vnetName
   }
 }
+
+module aks 'aks-cluster.bicep' = {
+  name: 
+  params: {
+    dnsPrefix:
+    adminpassword: 
+    agentVMSize: 
+    clustername: 
+    osdisksize: 
+    username:
+    vnetsubnetid: vnet.outputs.subnetId
+  }
+}
