@@ -23,7 +23,7 @@ steps:
     scriptType: 'pscore'
     scriptLocation: 'inlineScript'
     inlineScript: |
-      az deployment group what-if --name 'preview changes-$(Build.BuildNumber)' --resource-group $(resourcegroupname) --template-file ./infrastructuur/main.bicep --parameters ./infrastructuur/main.parameters.json  
+      az deployment group what-if --name preview changes-$(Build.BuildNumber) --resource-group $(resourcegroupname) --template-file ./infrastructuur/main.bicep --parameters ./infrastructuur/main.parameters.json  
 
 - task: AzureCLI@2
   displayName: deploy bicep to azure
