@@ -2,7 +2,12 @@
 #pipeline blijvenleren
 
 trigger:
-- main
+  branches:
+    include:
+    - main
+  paths:
+    include:
+    - infrastructuur
 
 pool:
   vmImage: ubuntu-latest
