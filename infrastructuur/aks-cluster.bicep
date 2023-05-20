@@ -7,15 +7,7 @@ param adminpassword string
 param vnetsubnetid string
 param count int
 
-resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2022-10-01' = {
-  name: 'oms-${clustername}-${resourceGroup().location}'
-  location: resourceGroup().location
-  properties:{
-    sku:{
-      name: 'Free'
-    }
-  }
-}
+
 
 resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
   name: clustername
@@ -32,14 +24,7 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
     kubernetesVersion: '1.25.6'
     dnsPrefix: dnsPrefix
     enableRBAC: true
-    addonProfiles: {
-      omsagent:{
-        enabled: true
-        config: {
-          logAnalyticsWorkspaceResourceID: logAnalyticsWorkspace.id 
-        }
-      }
-    }
+
     agentPoolProfiles:[
       {
         name: 'win'
@@ -128,9 +113,6 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
       upgradeChannel:'stable'
     }
   }
-  dependsOn:[
-    logAnalyticsWorkspace
-  ]
 }
 
 output clusterPrincipalID string = aks.properties.identityProfile.kubeletidentity.objectId
