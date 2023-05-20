@@ -7,9 +7,14 @@ param username string
 param adminpassword string
 param vnetsubnetid string
 
-
-resource vnet 'Microsoft.Network/virtualNetworks@2019-11-01' existing = {
-  name: 'vnet-aks-blijvenleren'
+resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2022-10-01' = {
+  name: 'oms-${clustername}-${resourceGroup().location}'
+  location: resourceGroup().location
+  properties:{
+    sku:{
+      name: 'Free'
+    }
+  }
 }
 
 resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
@@ -23,7 +28,18 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
    type: 'SystemAssigned' 
   }
   properties:{
+    nodeResourceGroup: 'rg-nodes-${clustername}'
+    kubernetesVersion: '1.25.6'
     dnsPrefix: dnsPrefix
+    enableRBAC: true
+    addonProfiles: {
+      omsagent:{
+        enabled: true
+        config: {
+          logAnalyticsWorkspaceResourceID: logAnalyticsWorkspace.id 
+        }
+      }
+    }
     agentPoolProfiles:[
       {
         name: 'windows'
@@ -85,4 +101,9 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
       upgradeChannel:'stable'
     }
   }
+  dependsOn:[
+    logAnalyticsWorkspace
+  ]
 }
+
+output clusterPrincipalID string = aks.properties.identityProfile.kubeletidentity.objectId
