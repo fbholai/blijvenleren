@@ -11,7 +11,7 @@ param count int
 
 resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
   name: clustername
-  location: resourceGroup().location
+  location: 'westus'
   sku: {
     name:'Basic'        
     tier:'Free'
