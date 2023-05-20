@@ -58,6 +58,7 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
         availabilityZones:[
           '1'
           '2'
+          '3'
         ]
         maxCount:3
         minCount:1
@@ -85,6 +86,7 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
         availabilityZones:[
           '1'
           '2'
+          '3'
         ]
         maxCount: 3
         minCount: 1
