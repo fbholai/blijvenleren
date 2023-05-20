@@ -30,7 +30,7 @@ module vnet 'vnet.bicep' = {
 module aks 'aks-cluster.bicep' = {
   name: 'aks-deployment'
   params: {
-    count: 3
+    count: count
     dnsPrefix: dnsPrefix
     adminpassword: keyvault.getSecret('aksadminpass')
     agentVMSize: agentVMSize
