@@ -28,6 +28,14 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
    type: 'SystemAssigned' 
   }
   properties:{
+    addonProfiles:{
+      omsagent:{
+        enabled: true
+        config:{
+          logAnalyticsWorkspaceResourceID: logAnalyticsWorkspace.id
+        }
+      }
+    }
     nodeResourceGroup: 'rg-nodes-${clustername}'
     kubernetesVersion: '1.25.6'
     dnsPrefix: dnsPrefix
@@ -35,11 +43,6 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
 
     agentPoolProfiles:[
       {
-        availabilityZones:[
-          '1'
-          '2'
-          '3'
-        ]
         name: 'win'
         osDiskSizeGB: 128
         count: count
@@ -66,11 +69,6 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
         enableAutoScaling:true
       }
       {
-        availabilityZones:[
-          '1'
-          '2'
-          '3'
-        ]
         name: 'linux'
         count: count
         vmSize: agentVMSize
