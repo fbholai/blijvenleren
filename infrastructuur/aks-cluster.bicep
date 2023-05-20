@@ -40,8 +40,6 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
         nodeTaints: [
           'runTime=windows:NoSchedule'
         ]
-        maxCount:3
-        minCount:1
         powerState:{
           code:'Running'
         }
@@ -62,8 +60,6 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
         type:'AvailabilitySet'
         vnetSubnetID: vnetsubnetid
         osType: 'Linux'
-        maxCount: 3
-        minCount: 1
         powerState:{
            code: 'Running'
         }
