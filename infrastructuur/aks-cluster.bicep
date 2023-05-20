@@ -7,7 +7,15 @@ param adminpassword string
 param vnetsubnetid string
 param count int
 
-
+resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2020-10-01' = {
+  name: 'LAW-${clustername}'
+  location: resourceGroup().location
+  properties: {
+    sku: {
+      name: 'Free'
+    }
+  }
+}
 
 resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
   name: clustername
@@ -27,6 +35,11 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
 
     agentPoolProfiles:[
       {
+        availabilityZones:[
+          '1'
+          '2'
+          '3'
+        ]
         name: 'win'
         osDiskSizeGB: 128
         count: count
@@ -53,6 +66,11 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
         enableAutoScaling:true
       }
       {
+        availabilityZones:[
+          '1'
+          '2'
+          '3'
+        ]
         name: 'linux'
         count: count
         vmSize: agentVMSize
