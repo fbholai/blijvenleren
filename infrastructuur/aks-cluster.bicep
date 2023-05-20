@@ -47,8 +47,8 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
         count: count
         vmSize: agentVMSize
         osType: 'Windows'
-        osSKU:'Windows2022'
-        mode:'System'
+        osSKU:'Windows2019'
+        mode: 'User'
         osDiskType: 'Managed'
         maxPods: 110
         type: 'VirtualMachineScaleSets'
@@ -71,6 +71,33 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
           osType: 'Windows'
         }
         vnetSubnetID: vnetsubnetid
+      }
+      {
+        name: 'linux'
+        count: count
+        vmSize: agentVMSize
+        mode: 'System'
+        osDiskSizeGB: 128
+        osDiskType: 'Managed'
+        maxPods: 110
+        type: 'VirtualMachineScaleSets'
+        vnetSubnetID: vnetsubnetid
+        osType: 'Linux'
+        availabilityZones:[
+          '1'
+          '2'
+          '3'
+        ]
+        maxCount: 3
+        minCount: 1
+        enableAutoScaling: true
+        powerState:{
+           code: 'Running'
+        }
+        nodeLabels: {
+          mode: 'System'
+          osType: 'Linux'
+        }
       }
     ]
     networkProfile:{
