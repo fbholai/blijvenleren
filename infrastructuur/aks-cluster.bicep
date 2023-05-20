@@ -45,8 +45,8 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
           '2'
           '3'
         ]
-        maxCount:3
-        minCount:1
+        maxCount:5
+        minCount:3
         enableAutoScaling: true
         powerState:{
           code:'Running'
@@ -73,8 +73,8 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
           '2'
           '3'
         ]
-        maxCount: 3
-        minCount: 1
+        maxCount: 5
+        minCount: 3
         enableAutoScaling: true
         powerState:{
            code: 'Running'
