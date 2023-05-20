@@ -9,10 +9,10 @@
             "value": "aks"
         },
         "vnetAddressPrefixes": {
-            "value": ["192.168.0.0/16"]
+            "value": ["10.0.0.0/8"]
         },
         "subnetAddressPrefix": {
-            "value": "192.168.1.0/24"
+            "value": "10.20.0.0/16"
         },
         "clustername": {
             "value": "aks-blijvenleren"
