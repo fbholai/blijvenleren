@@ -25,6 +25,9 @@
         },
         "username": {
             "value": "azureuser"
+        },
+        "count": {
+            "value": 1
         }
 }
 }

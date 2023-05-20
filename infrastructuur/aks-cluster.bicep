@@ -6,6 +6,7 @@ param username string
 @secure()
 param adminpassword string
 param vnetsubnetid string
+param count int
 
 resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2022-10-01' = {
   name: 'oms-${clustername}-${resourceGroup().location}'
@@ -44,7 +45,7 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
       {
         name: 'windows'
         osDiskSizeGB: 128
-        count: osdisksize
+        count: count
         vmSize: agentVMSize
         osType: 'Windows'
         osSKU:'Windows2022'
