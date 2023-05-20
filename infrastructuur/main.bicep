@@ -6,8 +6,10 @@ param subnetName string
 param vnetAddressPrefixes array
 @description('The subnet address prefix')
 param subnetAddressPrefix string
-param clustername string = 'aks-blijvenleren'
+param clustername string
 param dnsPrefix string = '${clustername}-dns'
+param agentVMSize string
+param username string
 
 
 resource keyvault 'Microsoft.KeyVault/vaults@2023-02-01' existing = {
@@ -29,9 +31,9 @@ module aks 'aks-cluster.bicep' = {
     count: 1
     dnsPrefix: dnsPrefix
     adminpassword: keyvault.getSecret('aksadminpassword')
-    agentVMSize: 'standard_d2s_v3'
-    clustername: 'aks-blijvenleren'
-    username: 'azureuser'
+    agentVMSize: agentVMSize
+    clustername: clustername
+    username: username
     vnetsubnetid: vnet.outputs.subnetId
   }
 }
