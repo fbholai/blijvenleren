@@ -17,6 +17,28 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2020-10
   }
 }
 
+resource aksgrafana 'Microsoft.Dashboard/grafana@2022-08-01' = {
+  name: 'aksgrafanadashboard'
+  location:resourceGroup().location
+  sku:{
+    name: 'aksgrafanadashboard'
+  }
+  identity:{
+    type: 'SystemAssigned'
+  }
+  properties:{
+    grafanaIntegrations:{
+      azureMonitorWorkspaceIntegrations:[
+        {
+          azureMonitorWorkspaceResourceId: logAnalyticsWorkspace.id
+        }
+      ]
+    }
+  }
+
+}
+
+
 resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
   name: clustername
   location: resourceGroup().location
