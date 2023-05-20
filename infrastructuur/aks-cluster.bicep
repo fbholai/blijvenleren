@@ -42,7 +42,7 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
     }
     agentPoolProfiles:[
       {
-        name: 'windows'
+        name: 'win'
         osDiskSizeGB: 128
         count: count
         vmSize: agentVMSize
