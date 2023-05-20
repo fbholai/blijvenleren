@@ -17,20 +17,11 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2020-10
   }
 }
 
-resource azmonitorworkspace 'Microsoft.OperationalInsights/workspaces@2022-10-01' = {
-  name: 'blijvenleren-workspace'
+resource azmonitorworkspace 'Microsoft.Monitor/accounts@2023-04-03' ={
+  name: 'aks-monitor-workspace'
   location: resourceGroup().location
-  identity:{
-    type: 'SystemAssigned'
-  }
-  properties:{
-    features:{
-      clusterResourceId:logAnalyticsWorkspace.id
-      enableDataExport:true
-      enableLogAccessUsingOnlyResourcePermissions:true
-    }
-  }
 }
+
 
 resource aksgrafana 'Microsoft.Dashboard/grafana@2022-08-01' = {
   name: 'aksgrafanadashboard'
