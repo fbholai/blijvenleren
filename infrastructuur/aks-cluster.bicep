@@ -36,18 +36,12 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
         mode: 'User'
         osDiskType: 'Managed'
         maxPods: 110
-        type:'VirtualMachineScaleSets'
+        type:'AvailabilitySet'
         nodeTaints: [
           'runTime=windows:NoSchedule'
         ]
-        availabilityZones:[
-          '1'
-          '2'
-          '3'
-        ]
         maxCount:3
         minCount:1
-        enableAutoScaling: true
         powerState:{
           code:'Running'
         }
@@ -65,17 +59,11 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
         osDiskSizeGB: 128
         osDiskType: 'Managed'
         maxPods: 110
-        type:'VirtualMachineScaleSets'
+        type:'AvailabilitySet'
         vnetSubnetID: vnetsubnetid
         osType: 'Linux'
-        availabilityZones:[
-          '1'
-          '2'
-          '3'
-        ]
         maxCount: 3
         minCount: 1
-        enableAutoScaling: true
         powerState:{
            code: 'Running'
         }
