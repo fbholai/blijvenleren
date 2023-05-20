@@ -18,7 +18,7 @@
             "value": "aks-blijvenleren"
         },
         "agentVMSize": {
-            "value": "standard_d2s_v3"
+            "value": "Standard_D4s_v3"
         },
         "username": {
             "value": "azureuser"
