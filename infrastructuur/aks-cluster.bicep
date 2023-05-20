@@ -27,7 +27,7 @@ resource aksgrafana 'Microsoft.Dashboard/grafana@2022-08-01' = {
   name: 'aksgrafanadashboard'
   location:resourceGroup().location
   sku:{
-    name: 'aksgrafanadashboard'
+    name: 'Standard'
   }
   identity:{
     type: 'SystemAssigned'
@@ -41,6 +41,9 @@ resource aksgrafana 'Microsoft.Dashboard/grafana@2022-08-01' = {
       ]
     }
   }
+  dependsOn:[
+    azmonitorworkspace
+  ]
 
 }
 
