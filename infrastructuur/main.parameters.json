@@ -12,7 +12,7 @@
             "value": ["192.168.0.0/16"]
         },
         "subnetAddressPrefix": {
-            "value": "192.168.0.0/24"
+            "value": "192.168.1.0/24"
         },
         "clustername": {
             "value": "aks-blijvenleren"
