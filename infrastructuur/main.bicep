@@ -38,4 +38,7 @@ module aks 'aks-cluster.bicep' = {
     username: username
     vnetsubnetid: vnet.outputs.subnetId
   }
+  dependsOn:[
+    vnet
+  ]
 }
