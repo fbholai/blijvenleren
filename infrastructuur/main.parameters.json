@@ -17,9 +17,6 @@
         "clustername": {
             "value": "aks-blijvenleren"
         },
-        "osdisksize": {
-            "value": 128
-        },
         "agentVMSize": {
             "value": "standard_d2s_v3"
         },
@@ -28,9 +25,6 @@
         },
         "count": {
             "value": 1
-        },
-        "adminpassword": {
-            "value": ""
         }
 }
 }
