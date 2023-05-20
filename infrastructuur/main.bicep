@@ -32,7 +32,7 @@ module aks 'aks-cluster.bicep' = {
   params: {
     count: count
     dnsPrefix: dnsPrefix
-    adminpassword: keyvault.getSecret('aksadminpass')
+    adminpassword: 'Esdfsfsfsd!erD5'
     agentVMSize: agentVMSize
     clustername: clustername
     username: username
