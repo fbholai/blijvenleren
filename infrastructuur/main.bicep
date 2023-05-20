@@ -15,6 +15,7 @@ param count int
 
 resource keyvault 'Microsoft.KeyVault/vaults@2023-02-01' existing = {
   name: 'IBIS-WE-T-AVD-KV2'
+  scope: resourceGroup('IBIS-WE-P-RG-AVD-KEYVAULT')
 }
 module vnet 'vnet.bicep' = {
   name: 'vnet-deployment'
