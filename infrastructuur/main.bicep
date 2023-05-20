@@ -31,7 +31,6 @@ module aks 'aks-cluster.bicep' = {
     adminpassword: keyvault.getSecret('aksadminpassword')
     agentVMSize: 'standard_d2s_v3'
     clustername: 'aks-blijvenleren'
-    osdisksize: 128
     username: 'azureuser'
     vnetsubnetid: vnet.outputs.subnetId
   }

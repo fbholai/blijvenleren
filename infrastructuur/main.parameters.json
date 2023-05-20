@@ -28,6 +28,9 @@
         },
         "count": {
             "value": 1
+        },
+        "adminpassword": {
+            "value": ""
         }
 }
 }

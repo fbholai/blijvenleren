@@ -1,6 +1,5 @@
 param clustername string
 param dnsPrefix string = '${clustername}-dns'
-param osdisksize int
 param agentVMSize string
 param username string
 @secure()
