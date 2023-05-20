@@ -17,6 +17,21 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2020-10
   }
 }
 
+resource azmonitorworkspace 'Microsoft.OperationalInsights/workspaces@2022-10-01' = {
+  name: 'blijvenleren-workspace'
+  location: resourceGroup().location
+  identity:{
+    type: 'SystemAssigned'
+  }
+  properties:{
+    features:{
+      clusterResourceId:logAnalyticsWorkspace.id
+      enableDataExport:true
+      enableLogAccessUsingOnlyResourcePermissions:true
+    }
+  }
+}
+
 resource aksgrafana 'Microsoft.Dashboard/grafana@2022-08-01' = {
   name: 'aksgrafanadashboard'
   location:resourceGroup().location
@@ -30,7 +45,7 @@ resource aksgrafana 'Microsoft.Dashboard/grafana@2022-08-01' = {
     grafanaIntegrations:{
       azureMonitorWorkspaceIntegrations:[
         {
-          azureMonitorWorkspaceResourceId: logAnalyticsWorkspace.id
+          azureMonitorWorkspaceResourceId: azmonitorworkspace.id
         }
       ]
     }
