@@ -19,7 +19,7 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2022-10
 
 resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
   name: clustername
-  location: 'northeurope'
+  location: resourceGroup().location
   sku: {
     name:'Basic'        
     tier:'Free'
