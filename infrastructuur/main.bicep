@@ -10,6 +10,7 @@ param clustername string
 param dnsPrefix string = '${clustername}-dns'
 param agentVMSize string
 param username string
+param count int
 
 
 resource keyvault 'Microsoft.KeyVault/vaults@2023-02-01' existing = {
@@ -28,7 +29,7 @@ module vnet 'vnet.bicep' = {
 module aks 'aks-cluster.bicep' = {
   name: 'aks-deployment'
   params: {
-    count: 1
+    count: count
     dnsPrefix: dnsPrefix
     adminpassword: keyvault.getSecret('aksadminpassword')
     agentVMSize: agentVMSize
