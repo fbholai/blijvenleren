@@ -6,6 +6,8 @@ param subnetName string
 param vnetAddressPrefixes array
 @description('The subnet address prefix')
 param subnetAddressPrefix string
+param subnetNamegw string
+param vnetAddressPrefixesgw string
 
 
 resource vnet 'Microsoft.Network/virtualNetworks@2019-11-01' = {
@@ -20,6 +22,12 @@ resource vnet 'Microsoft.Network/virtualNetworks@2019-11-01' = {
         name: subnetName
         properties: {
           addressPrefix: subnetAddressPrefix
+        }
+      }
+      {
+        name: subnetNamegw
+        properties:{
+          addressPrefix: vnetAddressPrefixesgw
         }
       }      
     ]

@@ -8,6 +8,12 @@
         "subnetName": {
             "value": "aks"
         },
+        "subnetNamegw": {
+            "value": "aks-gw"
+        },
+        "vnetAddressPrefixesgw": {
+            "value": "10.21.0.0/16"
+        },
         "vnetAddressPrefixes": {
             "value": ["10.0.0.0/8"]
         },
