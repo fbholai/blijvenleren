@@ -6,4 +6,4 @@ BlijvenLeren is een nieuwe startup die zichzelf tot doel heeft gesteld om leren,
 
 Deze nieuwe applicatie is 3 maanden geleden gepitched bij een aantal investeerders en er is toen een bedrag van EUR 50.000,- opgehaald om een eerste versie van deze applicatie te ontwikkelen en beschikbaar te maken. Na een succesvolle demo is er door de overheidscoöperatie Wigo4lt besloten naar productie te gaan met deze omgeving. Naast een team van ontwikkelaars die zich gaan bezighouden met de applicatie, zal jij worden toegevoegd aan het DevOps team om de benodigde infrastructuur op te zetten en deze productie ready te maken.
 
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/blijvenleren)
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://github.com/fbholai/blijvenleren)
