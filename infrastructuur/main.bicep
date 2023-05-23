@@ -35,8 +35,6 @@ module vnet 'vnet.bicep' = {
 module aks 'aks-cluster.bicep' = {
   name: 'aks-deployment'
   params: {
-    frontDoorProfilename:frontDoorProfilename
-    frontDoorEndpointname:frontDoorEndpointname
     count: count
     dnsPrefix: dnsPrefix
     adminpassword: keyvault.getSecret('aksadminpass')
@@ -48,4 +46,12 @@ module aks 'aks-cluster.bicep' = {
   dependsOn:[
     vnet
   ]
+}
+
+module frontdoor 'frontdoor.bicep' = {
+  name: 'afd-deployment'
+  params: {
+    frontDoorEndpointname: frontDoorEndpointname
+    frontDoorProfilename: frontDoorProfilename
+  }
 }
