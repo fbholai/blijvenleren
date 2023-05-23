@@ -9,5 +9,6 @@ BlijvenLeren is een nieuwe startup die zichzelf tot doel heeft gesteld om leren,
 Deze nieuwe applicatie is 3 maanden geleden gepitched bij een aantal investeerders en er is toen een bedrag van EUR 50.000,- opgehaald om een eerste versie van deze applicatie te ontwikkelen en beschikbaar te maken. Na een succesvolle demo is er door de overheidscoöperatie Wigo4lt besloten naar productie te gaan met deze omgeving. Naast een team van ontwikkelaars die zich gaan bezighouden met de applicatie, zal jij worden toegevoegd aan het DevOps team om de benodigde infrastructuur op te zetten en deze productie ready te maken.
 
 # Brainstorm
-![brainstorm](https://github.com/fbholai/blijvenleren/assets/116769493/7490db88-65a2-4f0c-a45e-3cbf9304cb9b)
+![brainstormv2](https://github.com/fbholai/blijvenleren/assets/116769493/f87bc44a-25ab-461f-bf67-414a56cb13e2)
+
 
