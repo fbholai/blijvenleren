@@ -84,8 +84,8 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
         osDiskType: 'Managed'
         maxPods: 110
         type:'VirtualMachineScaleSets'
-        minCount:2
-        maxCount:3
+        minCount:3
+        maxCount:5
         nodeTaints: [
           'runTime=windows:NoSchedule'
         ]
@@ -108,8 +108,8 @@ resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
         osDiskType: 'Managed'
         maxPods: 110
         type:'VirtualMachineScaleSets'
-        minCount:2
-        maxCount:3
+        minCount:3
+        maxCount:5
         vnetSubnetID: vnetsubnetid
         osType: 'Linux'
         powerState:{
