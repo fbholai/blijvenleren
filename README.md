@@ -1,4 +1,4 @@
-:star:[![Build Status](https://dev.azure.com/Blijven-leren/blijvenleren/_apis/build/status%2Ffbholai.blijvenleren?branchName=main)](https://dev.azure.com/Blijven-leren/blijvenleren/_build/latest?definitionId=3&branchName=main):star:
+:star:[![Build Status][![Build Status](https://dev.azure.com/Blijven-leren/blijvenleren/_apis/build/status%2Ffbholai.blijvenleren?branchName=main)](https://dev.azure.com/Blijven-leren/blijvenleren/_build/latest?definitionId=3&branchName=main):star:
  
 # Blijvenleren
 
