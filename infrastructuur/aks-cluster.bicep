@@ -158,7 +158,7 @@ output clusterPrincipalID string = aks.properties.identityProfile.kubeletidentit
 
 resource frontDoorProfile 'Microsoft.Cdn/profiles@2021-06-01' = {
   name: frontDoorProfilename
-  location: resourceGroup().location
+  location: 'global'
   sku: {
     name:'Standard_AzureFrontDoor'
   }
@@ -191,6 +191,7 @@ resource frontDoorOriginGroup 'Microsoft.Cdn/profiles/originGroups@2021-06-01' =
 }}
 resource publicip 'Microsoft.Network/publicIPAddresses@2022-11-01' existing = {
   name: 'kubernetes-aae1aab1c75554a48b9a6025cd814441'
+  scope: resourceGroup('rg-nodes-aks-blijvenleren')
 }
 resource frontDoorOrigin 'Microsoft.Cdn/profiles/originGroups/origins@2021-06-01' = {
   name: 'westeurope'
