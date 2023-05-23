@@ -7,7 +7,7 @@ param adminpassword string
 param vnetsubnetid string
 param count int
 param frontDoorProfilename string
-param frontDoorEndpointname string = 'afd-blijvenleren'
+param frontDoorEndpointname string
 
 resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2020-10-01' = {
   name: 'LAW-${clustername}'
