@@ -13,6 +13,8 @@ param username string
 param count int
 param subnetNamegw string
 param vnetAddressPrefixesgw string
+param frontDoorProfilename string
+param frontDoorEndpointname string
 
 resource keyvault 'Microsoft.KeyVault/vaults@2023-02-01' existing = {
   name: 'IBIS-WE-T-AVD-KV2'
@@ -33,6 +35,8 @@ module vnet 'vnet.bicep' = {
 module aks 'aks-cluster.bicep' = {
   name: 'aks-deployment'
   params: {
+    frontDoorProfilename:frontDoorProfilename
+    frontDoorEndpointname:frontDoorEndpointname
     count: count
     dnsPrefix: dnsPrefix
     adminpassword: keyvault.getSecret('aksadminpass')
