@@ -11,4 +11,14 @@ Deze nieuwe applicatie is 3 maanden geleden gepitched bij een aantal investeerde
 # Brainstorm
 ![brainstormv2](https://github.com/fbholai/blijvenleren/assets/116769493/f87bc44a-25ab-461f-bf67-414a56cb13e2)
 
+# Compliancy
+
+met behulp van azure policy is de staat van je infrastructuur in te zien. Door middel van beleid dwing je consistentie af voor je Cloud infrastructuur. Als voorbeeld is het mogelijk resources alleen aan te kunnen maken in een gedefiniëerde regio.
+
+Defender for cloud integreert met AKS. Zo is het mogelijk om op de hoogte gebracht te worden van aanbevelingen die worden gegenereerd door Defender for cloud. met defender for containers krijg je adviezen over de juiste configuratie van je cluster.
+
+Ook kan er gekeken worden naar code compliancy met name bicep linter configuratie. Hiermee zijn code best-practices af te stellen voor ontwikkelaars.
+
+# Backup
+backup van storage accounts en azure files is mogelijk vanuit azure backup. Voor AKS is de Kubernetes Service backup (preview) aanwezig. Hiermee is het mogelijk om de data te backuppen en te restoren. Voor backup dient een extension in de cluster geinstalleerd te worden. De extension heeft ook een blob storage-account nodig om de backup data hierin op te slaan.
 
