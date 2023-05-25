@@ -22,3 +22,11 @@ Ook kan er gekeken worden naar code compliancy met name bicep linter configurati
 # Backup
 backup van storage accounts en azure files is mogelijk vanuit azure backup. Voor AKS is de Kubernetes Service backup (preview) aanwezig. Hiermee is het mogelijk om de data te backuppen en te restoren. Voor backup dient een extension in de cluster geinstalleerd te worden. De extension heeft ook een blob storage-account nodig om de backup data hierin op te slaan.
 
+# Devops DORA metrics
+Deployment Frequency: Refers to the frequency of successful software releases to production.
+
+Lead Time for Changes: Captures the time between a code change commit and its deployable state.
+
+Mean Time to Recovery: Measures the time between an interruption due to deployment or system failure and full recovery.
+
+Change Failure Rate: Indicates how often a team’s changes or hotfixes lead to failures after the code has been deployed.
